@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.util.Collection;
 import java.util.LinkedList;
 
+import javax.security.auth.message.callback.PrivateKeyCallback.Request;
+
 public class ProductModel {
 
 	private static final String TABLE_NAME = "Prodotto";
@@ -235,13 +237,12 @@ public class ProductModel {
 	public synchronized RecensioneBean getRecensione(int codiceProdotto, String email) {
 		String sql2 = "SELECT votazione, testo FROM Recensione WHERE codiceProdotto = ? AND emailCliente = ?";
 		Connection con = null;
-		PreparedStatement ps = null;
 		RecensioneBean bean = new RecensioneBean();
 		
 		try {
 			con = DriverManagerConnectionPool.getConnection();
-			ps = con.prepareStatement(sql2);
-				
+			PreparedStatement ps = con.prepareStatement(sql2);
+			
 			ps.setInt(1, codiceProdotto);
 			ps.setString(2, email);
 				
