@@ -8,7 +8,7 @@ CREATE TABLE UserAccount
 (  
 	email varchar(50) PRIMARY KEY NOT NULL, 
     passwordUser varchar(5000) NOT NULL,
-	nome varchar(50) NOT NULL,
+	nome varchar(50) NOT NULL, 
     cognome varchar(50) NOT NULL,
     indirizzo varchar(50) NOT NULL,
     telefono varchar(15) NOT NULL,
