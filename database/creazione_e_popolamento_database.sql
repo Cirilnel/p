@@ -5,7 +5,7 @@ USE GeekFactoryDB;
 
 DROP TABLE IF EXISTS UserAccount;
 CREATE TABLE UserAccount
-( 
+(  
 	email varchar(50) PRIMARY KEY NOT NULL, 
     passwordUser varchar(5000) NOT NULL,
 	nome varchar(50) NOT NULL,
